@@ -12,7 +12,7 @@ const sr = ScrollReveal({
 	duration: 1000,
 });
 
-sr.reveal('.logo', { delay: 200, origin: 'left' });
+//sr.reveal('.logo', { delay: 200, origin: 'left' });
 sr.reveal('.menu-btn', { delay: 520, origin: 'right' });
 sr.reveal('.texto-inicio span', { delay: 200, origin: 'top' });
 sr.reveal('.texto-inicio h1', { delay: 680, origin: 'left' });
@@ -20,7 +20,7 @@ sr.reveal('.texto-inicio h2', { delay: 680, origin: 'left' });
 sr.reveal('.texto-inicio h3', { delay: 680, origin: 'left' });
 sr.reveal('.texto-inicio p', { delay: 750, origin: 'right' });
 sr.reveal('.main-btn', { delay: 860, origin: 'left' });
-sr.reveal('.compartir', { delay: 950, origin: 'bottom' });
+sr.reveal('.compartir', { delay: 650, origin: 'bottom' });
 sr.reveal('.img-inicio', { delay: 850, origin: 'left' });
 sr.reveal('.img-xp', { delay: 850, origin: 'left' });
 sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });

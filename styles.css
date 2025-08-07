@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100%;
@@ -36,6 +36,7 @@ header {
     background: transparent;
     transition: all ease .45s;
     overflow-x: hidden;
+    background-color: #191919;
 }
 
 .logo {
