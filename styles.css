@@ -11,7 +11,7 @@
     --bg-color: #1f1f21;
     --text-color: #fff;
     --main-color: rgb(53, 107, 142);
-    --big-font: 4rem;
+    --big-font: 3.5rem;
     --med-font: 3rem;
     --lit-font: 1.5rem;
     --p-font: 1.1rem;
@@ -36,6 +36,7 @@ header {
     background: transparent;
     transition: all ease .45s;
     overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #191919;
 }
 
@@ -153,8 +154,7 @@ section {
 
 .fecha span {
     background: none;
-    border: none;
-    padding: 2%;
+    padding: 1.5%;
     color: var(--text-color);
     font-weight: 700;
     font-size: 15px;
@@ -179,7 +179,7 @@ section {
     color: var(--main-color);
 }
 
-.downl{
+.downl {
     height: 25px;
     width: 25px;
     vertical-align: middle;
@@ -403,6 +403,169 @@ a {
     border-radius: 5%;
     filter: drop-shadow(0px 0px 5rem rgba(53, 106, 142, 0.9));
 }
+
+
+
+/* ---  TIMELINE CSS  ---*/
+
+/* Layout general */
+.timeline {
+    position: relative;
+    padding: 10rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Línea vertical central */
+.timeline .line {
+
+    position: absolute;
+    left: 50%;
+    top: 50;
+    width: 4px;
+    height: 90%;
+    background: #ccc;
+    transform: translateX(-50%);
+}
+
+/* Cada evento */
+.event {
+    position: relative;
+    width: calc(50% - 2rem);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Punto sobre la línea */
+.event::before {
+    content: "";
+    position: absolute;
+    top: 1.8rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid;
+}
+
+/* Rama IT = izquierda */
+.event--it {
+    left: 0;
+    text-align: right;
+}
+
+.event--it::before {
+    right: -2.75rem;
+    border-color: #007acc;
+}
+
+/* Rama CNC = derecha */
+.event--cnc {
+    position: relative;
+    width: calc(50%);
+    left: 27rem;
+}
+
+.event--cnc::before {
+    left: -3.75rem;
+    border-color: #e67e22;
+}
+
+
+/* Contenedor de texto */
+.event__content {
+    background: #2b2b2b;
+    color: #eee;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;    
+    transition: 0.3s ease;
+    box-shadow: 0.3s ease;
+    background: 0.3s ease;
+    cursor: pointer;
+}
+
+.event__content:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    background: #3a3a3a;
+}
+
+.event__date {
+    display: block;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.event__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.event__desc {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* inicialmente oculto */
+.event__extra {
+    font-size: 13px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* clase que activa el desplegado */
+.event__content.expanded .event__extra {
+    max-height: 280px;
+    /* o lo que estimes suficiente */
+}
+
+.img-timeline img {
+    position: relative;
+    display: block;
+    padding-bottom: 8%;
+    margin: auto; 
+    width: 35%;
+    filter: drop-shadow(0px 0px 1rem rgba(53, 106, 142, 0.9));
+}
+
+
+/* Responsive: en móvil un solo column */
+@media screen and (max-width: 850px) {
+    .timeline .line {
+        left: 1rem;
+    }
+
+    .event {
+        width: 80%;
+        padding-left: 3rem;
+        text-align: left !important;
+    }
+
+    .event--cnc {
+        left: 0rem;
+    }
+    
+    .event::before {
+        left: -.75rem;
+        right: auto;
+    }
+
+    .img-timeline img {
+    display: none;
+}
+}
+
+
+
+
+
 
 
 /* --- Estilos para sitio responsive --- */
