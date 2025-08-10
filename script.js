@@ -31,6 +31,8 @@ sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
 if (document.querySelector('#container-slider')) {
 	setInterval('funcionEjecutar("siguiente")', 5000);
 }
+
+
 //------------------------------ LIST SLIDER -------------------------
 if (document.querySelector('.listslider')) {
 	let link = document.querySelectorAll(".listslider li a");
@@ -109,7 +111,7 @@ function mostrar(n) {
 
 function siguiente() {
 	actual++;
-	if (actual > 10) {
+	if (actual > 11) {
 		actual = 0;
 	}
 	mostrar(actual);

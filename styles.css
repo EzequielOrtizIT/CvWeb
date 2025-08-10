@@ -180,8 +180,8 @@ section {
 }
 
 .downl {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     vertical-align: middle;
     transform: translateY(-3px);
     margin-left: 5px;
@@ -722,6 +722,10 @@ a {
         margin: auto;
         margin-top: 25%;
         margin-bottom: 25%;
+    }
+
+    .downl {
+        display: none;
     }
 
 }
