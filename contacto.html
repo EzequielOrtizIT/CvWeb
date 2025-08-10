@@ -37,37 +37,97 @@
             <span>Inicio</span>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
+        
     </header>
 
     <section class="contacto">
-
-        <section class="texto-contacto">
+        <div class="texto-contacto">
             <div class="texto-inicio">
+                <br><br>
                 <h3>Contacto</h3>
-                <p><i class='bx bx-envelope'></i> E-Mail: <a
-                        href="mailto:ezequielortiz.it@outlook.com">ezequielortiz.it@outlook.com</a></p>
-                <p></p>
-            </div>
-        </section>
+                <p><i class='bx bx-envelope'></i> E-mail:
+                    <a id="mailLink" href="mailto:ezequielortiz.it@outlook.com?subject=Contacto%20desde%20la%20web">
+                        ezequielortiz.it@outlook.com
+                    </a>
+                    <button class="chip" id="copyMail" aria-label="Copiar e-mail">
+                        <i class='bx bx-copy'></i> Copiar
+                    </button>
+                </p>
 
-        <div class="img-contacto">
+                <!-- CTA WHATSAPP GRANDE -->
+                <a class="cta-whatsapp"
+                    href="https://wa.me/5491130091589?text=Hola%20Ezequiel,%20vengo%20desde%20tu%20web%20y%20quisiera%20hablar."
+                    target="_blank" rel="noopener">
+                    <i class='bx bxl-whatsapp'></i>
+                    <div class="cta-text">
+                        <strong>Escribime por WhatsApp</strong>
+                        
+                        <p><br>Respuesta rápida • Lunes a Viernes</p>
+                    </div>
+                </a>
+
+                <ul class="meta">
+                    <li><i class='bx bx-time-five'></i> Horario: 9:00–18:00</li>
+                    <li><i class='bx bx-map'></i> CABA, Argentina</li>
+                    <li><i class='bx bx-reply'></i> Suelo responder entre 12 y 24 h</li>
+                </ul>
+            </div>
+
+            <!-- Tarjetas de canales -->
+            <div class="contact-grid">
+                <a class="contact-card" href="mailto:ezequielortiz.it@outlook.com?subject=Consulta%20técnica">
+                    <i class='bx bx-envelope'></i>
+                    <h4>E-mail</h4>
+                    <p>Enviame detalles o adjuntos</p>
+                </a>
+
+                <a class="contact-card" href="https://wa.me/5491130091589" target="_blank" rel="noopener">
+                    <i class='bx bxl-whatsapp'></i>
+                    <h4>WhatsApp</h4>
+                    <p>Mensajes o audio, como prefieras</p>
+                </a>
+
+                <a class="contact-card" href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"
+                    rel="noopener">
+                    <i class='bx bxl-linkedin'></i>
+                    <h4>LinkedIn</h4>
+                    <p>Conectemos y veamos oportunidades</p>
+                </a>
+
+                <a class="contact-card" href="https://github.com/EzequielOrtizIT" target="_blank" rel="noopener">
+                    <i class='bx bxl-github'></i>
+                    <h4>GitHub</h4>
+                    <p>Repos y proyectos personales</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dejá el badge de LinkedIn al costado como prueba social -->
+        <div class="aside-contacto">
             <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="dark"
                 data-type="VERTICAL" data-vanity="ezequiel-luciano-ortiz" data-version="v1"></div>
         </div>
-
-        <div class="img-contacto">
-            <a href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte."
-                target="_blank"><img src="src/whatsapp.png" alt=""></a>
-        </div>
     </section>
 
-    <div class="compartir">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/EzequielOrtizIT" target="_blank"><i class='bx bxl-github'></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte." target="_blank"><i class='bx bxl-whatsapp-square'></i></a>
-        </div>
-    </div>
+    <script>
+        const copyBtn = document.getElementById('copyMail');
+        const mailLink = document.getElementById('mailLink');
+
+        if (copyBtn && mailLink) {
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText('ezequielortiz.it@outlook.com');
+                    copyBtn.innerHTML = "<i class='bx bx-check'></i> Copiado";
+                    setTimeout(() => copyBtn.innerHTML = "<i class='bx bx-copy'></i> Copiar", 1600);
+                } catch (e) {
+                    alert('No se pudo copiar. Copiá manualmente, por favor.');
+                }
+            });
+        }
+
+
+
+    </script>
 
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script src="https://unpkg.com/scrollreveal"></script>

@@ -378,33 +378,120 @@ a {
 /* Estilos para pagina de contacto */
 
 .contacto {
-    margin: auto;
-    width: 90%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+margin: auto;
+  width: 90%;
+  /* height: 100vh;  <-- quitar */
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr; /* contenido + aside */
+  gap: 40px;
+  align-items: start;
+  padding-top: 8rem; /* para despegar del header fijo */
 }
 
-.img-contacto {
-    padding: 5%;
-    width: 350px;
-    height: 350px;
-    filter: drop-shadow(0px 0px 5rem rgba(53, 106, 142, 0.9));
+.texto-contacto .texto-inicio { margin-bottom: 1.5rem; }
+
+
+.cta-whatsapp {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: center;
+  background: linear-gradient(130.08deg, #2b2b2b 0%, #191919 100%);
+  border: 1px solid #2f7a4a;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-.img-contacto img {
-    width: 120%;
-    height: auto;
-    object-fit: contain;
-    animation: 3s ease-in-out infinite;
-    animation-delay: 2s;
-    border-radius: 5%;
-    filter: drop-shadow(0px 0px 5rem rgba(53, 106, 142, 0.9));
+.cta-whatsapp:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.45);
+  border-color: #35b46a;
 }
 
+.cta-whatsapp i {
+  font-size: 38px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  height: 56px; width: 56px;
+  border-radius: 12px;
+  background: #1f3a2a;
+}
 
+.cta-whatsapp .cta-text strong {
+  font-size: 1.05rem;
+}
+
+.cta-whatsapp .cta-text span {
+  display: block;
+  color: #9bd3b2;
+  font-size: .9rem;
+  margin-top: 2px;
+}
+
+.chip{
+  background:#2b2b2b; border:1px solid #3b3b3b;
+  color:var(--text-color); border-radius:999px;
+  padding:6px 12px; margin-left:8px; font-size:.9rem;
+  cursor:pointer; transition:.2s ease;
+}
+
+.chip:hover{ transform:translateY(-2px); }
+
+.meta{
+  margin: 12px 0 0 0; padding-left: 0;
+  display:grid; gap:6px;
+}
+
+.meta li{ color:#c3c3c3; font-size:.98rem; }
+.meta i{ margin-right:6px; color:#9bd3b2; }
+
+.contact-grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px,1fr));
+  gap: 14px;
+}
+
+.contact-card{
+  display: grid; place-items: start;
+  gap: 8px;
+  background:#2b2b2b; border:1px solid #3b3b3b;
+  padding: 16px; border-radius: 12px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-4px);
+  border-color: var(--main-color);
+  box-shadow: 0 10px 24px rgba(0,0,0,.4);
+}
+
+.contact-card i{ font-size: 24px; color: var(--main-color); }
+.contact-card h4{ margin:0; font-size: 1rem; }
+.contact-card p{ margin:0; color:#c3c3c3; font-size:.92rem; }
+
+.aside-contacto{
+  padding-top: 6px;
+  filter: drop-shadow(0 0 2.2rem rgba(53,106,142,.35));
+}
+
+@media (max-width: 1050px){
+  .contacto{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 6rem;
+  }
+  .contact-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px){
+  .contact-grid{ grid-template-columns: 1fr; }
+}
 
 /* ---  TIMELINE CSS  ---*/
 
