@@ -6,7 +6,6 @@ menu.onclick = () => {
 	navbar.classList.toggle('open');
 };
 
-
 const sr = ScrollReveal({
 	distance: '50px',
 	duration: 1000,
@@ -15,23 +14,34 @@ const sr = ScrollReveal({
 //sr.reveal('.logo', { delay: 200, origin: 'left' });
 sr.reveal('.menu-btn', { delay: 520, origin: 'right' });
 sr.reveal('.texto-inicio span', { delay: 200, origin: 'top' });
-sr.reveal('.texto-inicio h1', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio h2', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio h3', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio p', { delay: 750, origin: 'right' });
+sr.reveal('.texto-inicio h1', { delay: 480, origin: 'left' });
+sr.reveal('.texto-inicio h2', { delay: 480, origin: 'left' });
+sr.reveal('.texto-inicio h3', { delay: 480, origin: 'left' });
+sr.reveal('.texto-inicio p', { delay: 450, origin: 'right' });
 sr.reveal('.main-btn', { delay: 860, origin: 'left' });
 sr.reveal('.compartir', { delay: 650, origin: 'bottom' });
 sr.reveal('.img-inicio', { delay: 850, origin: 'left' });
-sr.reveal('.img-xp', { delay: 850, origin: 'left' });
-sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });
-sr.reveal('.img-contacto', { delay: 1050, origin: 'left' });
-sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
+sr.reveal('.img-xp', { delay: 250, origin: 'left' });
+sr.reveal('.img-xp-soft', { delay: 450, origin: 'left' });
+sr.reveal('.img-contacto', { delay: 450, origin: 'left' });
+sr.reveal('.contenedor', { delay: 450, origin: 'bottom' });
+sr.reveal('.event event--cnc', { delay: 450, origin: 'bottom' });
+sr.reveal('.event--it .event__content', {origin: 'left',distance: '40px',duration: 900,	interval: 120,easing: 'ease-out',viewOffset: { top: 80, bottom: 0 }});
+
+// Timeline: rama CNC desde la derecha
+sr.reveal('.event--cnc .event__content', {
+	origin: 'right',
+	distance: '40px',
+	duration: 900,
+	interval: 120,
+	easing: 'ease-out',
+	viewOffset: { top: 80, bottom: 0 }
+});
 
 
 if (document.querySelector('#container-slider')) {
 	setInterval('funcionEjecutar("siguiente")', 5000);
 }
-
 
 //------------------------------ LIST SLIDER -------------------------
 if (document.querySelector('.listslider')) {
