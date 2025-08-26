@@ -48,7 +48,7 @@ if (document.querySelector('.listslider')) {
 	let link = document.querySelectorAll(".listslider li a");
 	link.forEach(function (link) {
 		link.addEventListener('click', function (e) {
-			e.anteriorentDefault();
+			e.preventDefault();
 			let item = this.getAttribute('itlist');
 			let arrItem = item.split("_");
 			funcionEjecutar(arrItem[1]);
@@ -148,3 +148,51 @@ function playpause() {
 		boton.src = "src/play-circle-regular-24.png";
 	}
 }
+
+// ====== GA4: tracking de CV y Experiencia CNC ======
+document.addEventListener('DOMContentLoaded', function () {
+  // Helper seguro para enviar eventos a GA4
+  function sendEvent(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, params || {});
+    } else {
+      console.warn('gtag no disponible aún. Evento omitido:', name, params);
+    }
+  }
+
+  // 1) Clic en "Descargar CV" (mismo id="cv-ti" en las páginas donde exista)
+  (function bindCvClick(){
+    var el = document.getElementById('cv-ti');
+    if (!el) return;
+    el.addEventListener('click', function (e) {
+      var href = el.getAttribute('href') || '';
+      var file = href.split('/').pop() || 'CV_Ortiz.pdf';
+      sendEvent('download_cv', {
+        cv_role: 'IT',
+        file_name: file,
+        page_path: location.pathname
+      });
+    });
+  })();
+
+  // 2) Clic en el link hacia la página "Experiencia CNC" (desde timeline.html)
+  (function bindExpLink(){
+    var linkExp = document.getElementById('nav-exp-cnc') 
+               || document.querySelector('a[href="experiencia.html"]');
+    if (!linkExp) return;
+    linkExp.addEventListener('click', function () {
+      sendEvent('view_experiencia_cnc_link_click', {
+        link_text: (linkExp.textContent || '').trim(),
+        link_target: 'experiencia.html',
+        page_path: location.pathname
+      });
+    });
+  })();
+
+  // 3) Si estamos en experiencia.html, logueá una visita explícita
+  if (location.pathname.endsWith('experiencia.html')) {
+    sendEvent('view_experiencia_cnc_page', { page_path: location.pathname });
+  }
+});
+// ====== /GA4 ======
+
