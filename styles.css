@@ -261,8 +261,8 @@ section {
     border-top: 1px solid whitesmoke;
     height: 30px;
     max-width: auto;
-    padding: 0;
-    margin: 10px auto 0 auto;
+    padding: 10;
+    margin: 10px auto 0px auto;
 }
 
 .lineaGruesa {
@@ -270,7 +270,7 @@ section {
     height: 50px;
     max-width: auto;
     padding: 0;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0px auto;
 }
 
 /* Estilos para pagina de galeria con slider */
