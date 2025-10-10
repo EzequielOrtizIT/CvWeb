@@ -26,6 +26,10 @@ sr.reveal('.img-xp', { delay: 850, origin: 'left' });
 sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });
 sr.reveal('.img-contacto', { delay: 1050, origin: 'left' });
 sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
+sr.reveal('.proyectos-hero h1', { delay: 400, origin: 'left' });
+sr.reveal('.proyectos-hero p', { delay: 600, origin: 'right' });
+sr.reveal('.proyectos-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
+
 
 
 if (document.querySelector('#container-slider')) {
