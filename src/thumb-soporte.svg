@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#1f1f21"/><stop offset="1" stop-color="#2b2f33"/>
+  </linearGradient></defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <text x="50%" y="46%" fill="#cfe2f3" font-family="Rubik, Arial" font-size="65" text-anchor="middle" font-weight="700">
+    Servicio Técnico / Soporte IT
+  </text>
+  <text x="50%" y="60%" fill="#9aa3ad" font-family="Rubik, Arial" font-size="50" text-anchor="middle">
+    Documentación y ejemplos
+  </text>
+</svg>

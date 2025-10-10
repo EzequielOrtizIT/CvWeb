@@ -6,49 +6,41 @@ menu.onclick = () => {
 	navbar.classList.toggle('open');
 };
 
+
 const sr = ScrollReveal({
 	distance: '50px',
 	duration: 1000,
 });
 
-//sr.reveal('.logo', { delay: 200, origin: 'left' });
+sr.reveal('.logo', { delay: 200, origin: 'left' });
 sr.reveal('.menu-btn', { delay: 520, origin: 'right' });
 sr.reveal('.texto-inicio span', { delay: 200, origin: 'top' });
-sr.reveal('.texto-inicio h1', { delay: 480, origin: 'left' });
-sr.reveal('.texto-inicio h2', { delay: 480, origin: 'left' });
-sr.reveal('.texto-inicio h3', { delay: 480, origin: 'left' });
-sr.reveal('.texto-inicio p', { delay: 450, origin: 'right' });
+sr.reveal('.texto-inicio h1', { delay: 680, origin: 'left' });
+sr.reveal('.texto-inicio h2', { delay: 680, origin: 'left' });
+sr.reveal('.texto-inicio h3', { delay: 680, origin: 'left' });
+sr.reveal('.texto-inicio p', { delay: 750, origin: 'right' });
 sr.reveal('.main-btn', { delay: 860, origin: 'left' });
-sr.reveal('.compartir', { delay: 650, origin: 'bottom' });
+sr.reveal('.compartir', { delay: 950, origin: 'bottom' });
 sr.reveal('.img-inicio', { delay: 850, origin: 'left' });
-sr.reveal('.img-xp', { delay: 250, origin: 'left' });
-sr.reveal('.img-xp-soft', { delay: 450, origin: 'left' });
-sr.reveal('.img-contacto', { delay: 450, origin: 'left' });
-sr.reveal('.contenedor', { delay: 450, origin: 'bottom' });
-sr.reveal('.event event--cnc', { delay: 450, origin: 'bottom' });
-sr.reveal('.event--it .event__content', {origin: 'left',distance: '40px',duration: 900,	interval: 120,easing: 'ease-out',viewOffset: { top: 80, bottom: 0 }});
+sr.reveal('.img-xp', { delay: 850, origin: 'left' });
+sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });
+sr.reveal('.img-contacto', { delay: 1050, origin: 'left' });
+sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
+sr.reveal('.proyectos-hero h1', { delay: 400, origin: 'left' });
+sr.reveal('.proyectos-hero p', { delay: 600, origin: 'right' });
+sr.reveal('.proyectos-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
 
-// Timeline: rama CNC desde la derecha
-sr.reveal('.event--cnc .event__content', {
-	origin: 'right',
-	distance: '40px',
-	duration: 900,
-	interval: 120,
-	easing: 'ease-out',
-	viewOffset: { top: 80, bottom: 0 }
-});
 
 
 if (document.querySelector('#container-slider')) {
 	setInterval('funcionEjecutar("siguiente")', 5000);
 }
-
 //------------------------------ LIST SLIDER -------------------------
 if (document.querySelector('.listslider')) {
 	let link = document.querySelectorAll(".listslider li a");
 	link.forEach(function (link) {
 		link.addEventListener('click', function (e) {
-			e.preventDefault();
+			e.anteriorentDefault();
 			let item = this.getAttribute('itlist');
 			let arrItem = item.split("_");
 			funcionEjecutar(arrItem[1]);
@@ -121,7 +113,7 @@ function mostrar(n) {
 
 function siguiente() {
 	actual++;
-	if (actual > 11) {
+	if (actual > 10) {
 		actual = 0;
 	}
 	mostrar(actual);
@@ -148,51 +140,3 @@ function playpause() {
 		boton.src = "src/play-circle-regular-24.png";
 	}
 }
-
-// ====== GA4: tracking de CV y Experiencia CNC ======
-document.addEventListener('DOMContentLoaded', function () {
-  // Helper seguro para enviar eventos a GA4
-  function sendEvent(name, params) {
-    if (typeof gtag === 'function') {
-      gtag('event', name, params || {});
-    } else {
-      console.warn('gtag no disponible aún. Evento omitido:', name, params);
-    }
-  }
-
-  // 1) Clic en "Descargar CV" (mismo id="cv-ti" en las páginas donde exista)
-  (function bindCvClick(){
-    var el = document.getElementById('cv-ti');
-    if (!el) return;
-    el.addEventListener('click', function (e) {
-      var href = el.getAttribute('href') || '';
-      var file = href.split('/').pop() || 'CV_Ortiz.pdf';
-      sendEvent('download_cv', {
-        cv_role: 'IT',
-        file_name: file,
-        page_path: location.pathname
-      });
-    });
-  })();
-
-  // 2) Clic en el link hacia la página "Experiencia CNC" (desde timeline.html)
-  (function bindExpLink(){
-    var linkExp = document.getElementById('nav-exp-cnc') 
-               || document.querySelector('a[href="experiencia.html"]');
-    if (!linkExp) return;
-    linkExp.addEventListener('click', function () {
-      sendEvent('view_experiencia_cnc_link_click', {
-        link_text: (linkExp.textContent || '').trim(),
-        link_target: 'experiencia.html',
-        page_path: location.pathname
-      });
-    });
-  })();
-
-  // 3) Si estamos en experiencia.html, logueá una visita explícita
-  if (location.pathname.endsWith('experiencia.html')) {
-    sendEvent('view_experiencia_cnc_page', { page_path: location.pathname });
-  }
-});
-// ====== /GA4 ======
-
