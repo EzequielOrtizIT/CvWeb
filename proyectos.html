@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ezequiel Ortiz - Proyectos</title>
 
   <link rel="stylesheet" href="styles.css" />
@@ -13,147 +14,137 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-<header>
-      <a href="index.html" class="logo"
-        ><span><img class="downl" src="/src/home.png" alt="" /></span
-      ></a>
-      <ul class="navbar">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="timeline.html">Trayectoria</a></li>
-        <li><a href="formacion.html">Formacion</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="proyectos.html" class="active">Proyectos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
+  <header>
+    <a href="index.html" class="logo"><span><img class="downl" src="/src/home.png" alt="" /></span></a>
+    <ul class="navbar">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="timeline.html">Trayectoria</a></li>
+      <li><a href="formacion.html">Formacion</a></li>
+      <li><a href="proyectos.html" class="active">Proyectos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 
-      <div class="menu-btn">
-        <span>Menu</span>
-        <div class="bx bx-menu" id="menu-icon"></div>
-      </div>
-    </header>
-
-<section class="proyectos-hero">
-  <div>
-    <h1>Proyectos</h1>
-    <p>Selección de trabajos y experimentos. Vista y descarga desde Google Drive.</p>
-  </div>
-</section>
-
-<main class="proyectos-container">
-
-    <!-- Proyecto 1 -->
-<article class="proyecto-card">
-  <div class="proyecto-thumb">
-    <img src="src/thumb-soporte.svg" alt="Miniatura Servicio Técnico / Soporte IT" loading="lazy">
-  </div>
-  <div class="proyecto-body">
-    <p>Documentación y ejemplos de tareas de soporte informático, reparación de equipos y soluciones IT.</p>
-    <div class="proyecto-actions">
-      <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1z8v3dT-d1xbZOlm591hXidJ9kG8OuwGz?usp=drive_link">
-        <i class='bx bx-show'></i>&nbsp;Ver
-      </a>
+    <div class="menu-btn">
+      <span>Menu</span>
+      <div class="bx bx-menu" id="menu-icon"></div>
     </div>
-  </div>
-</article>
+  </header>
 
-<!-- Proyecto 2 -->
-<article class="proyecto-card">
-    <div class="proyecto-thumb">
+  <section class="proyectos-hero">
+    <div>
+      <h1>Proyectos</h1>
+      <p>Evidencia Técnica: Automatización de Procesos y Gestión de Infraestructura.</p>
+    </div>
+  </section>
+
+  <main class="proyectos-container">
+
+    <article class="proyecto-card" id="p1-jira">
+      <div class="proyecto-thumb">
         <img src="src/thumb-jira.svg" alt="Miniatura Jira Issue Loader" loading="lazy">
-    </div>
-    <div class="proyecto-body">
-        <p>Herramienta Python con interfaz Tkinter que automatiza la creación de tickets en Jira. Integración con API REST, carga dinámica de metadatos de proyecto y lógica de UI adaptativa (Subtareas).</p>
+      </div>
+      <div class="proyecto-body">
+        <h3>P1: Automatización de Ticketing (Python/API)</h3>
+        <p>
+          Solución Python (standalone) con interfaz <strong>Tkinter</strong> para estandarizar la creación de tickets de soporte en sistemas de Service Desk. Incluye <strong>integración API REST</strong> para carga dinámica de metadatos y lógica de
+          subtareas.
+        </p>
         <div class="proyecto-actions">
-            <a class="btn" target="_blank" rel="noopener" href="https://github.com/EzequielOrtizIT/Jira-AutoIssue.git">
-                <i class='bx bxl-github'></i>&nbsp;Ver
-            </a>
+          <a class="btn" target="_blank" rel="noopener" href="https://github.com/EzequielOrtizIT/Jira-AutoIssue.git">
+            <i class='bx bxl-github'></i>&nbsp;Ver
+          </a>
         </div>
-    </div>
-</article>
+      </div>
+    </article>
 
-<!-- Proyecto 3 -->
-<article class="proyecto-card">
-  <div class="proyecto-thumb">
-    <img src="src/thumb-ahk.svg" alt="Miniatura AutoHotKey" loading="lazy">
-  </div>
-  <div class="proyecto-body">
+    <article class="proyecto-card" id="p2-lab">
+      <div class="proyecto-thumb">
+        <img src="src/thumb-soporte.svg" alt="Miniatura Servicio Técnico / Soporte IT" loading="lazy">
+      </div>
+      <div class="proyecto-body">
+        <h3>P2: Lab. de Infraestructura y Gestión AD / PowerShell</h3>
+        <p>
+          Entorno simulado en <strong>Hyper-V</strong> para pruebas de <strong>Active Directory (GPO, Usuarios)</strong>
+          y desarrollo de scripts en <strong>PowerShell</strong>. Incluye documentación de procedimientos de SysAdmin
+          L2, troubleshooting y soluciones IT.
+        </p>
+        <div class="proyecto-actions">
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://drive.google.com/drive/folders/1z8v3dT-d1xbZOlm591hXidJ9kG8OuwGz?usp=drive_link">
+            <i class='bx bx-show'></i>&nbsp;Ver
+          </a>
+        </div>
+      </div>
+    </article>
 
-    <p>Scripts de automatización en AutoHotKey para crear archivos y mejorar la productividad.</p>
-    <div class="proyecto-actions">
-      <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1sU8He-w9j7FmKh8Uc-XqzvvUsJ2FzjGr?usp=drive_link">
-        <i class='bx bx-show'></i>&nbsp;Ver
-      </a>
-    </div>
-  </div>
-</article>
+    <article class="proyecto-card">
+      <div class="proyecto-thumb">
+        <img src="src/thumb-ahk.svg" alt="Miniatura AutoHotKey" loading="lazy">
+      </div>
+      <div class="proyecto-body">
+        <h3>P3: Automatización de Flujos de Trabajo (AutoHotKey / UX)</h3>
+        <p>
+          Desarrollo con herramienta <strong>AutoHotKey con interfaz GUI</strong> para automatizar la creación de
+          archivos.<br />
+          Eliminó el proceso manual y propenso a errores que tomaba <strong>horas</strong> diarias, reduciendo el tiempo
+          de preparación a <strong>segundos</strong>.
+        </p>
+        <div class="proyecto-actions">
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://drive.google.com/drive/folders/1sU8He-w9j7FmKh8Uc-XqzvvUsJ2FzjGr?usp=drive_link">
+            <i class='bx bx-show'></i>&nbsp;Ver
+          </a>
+        </div>
+      </div>
+    </article>
 
-<!-- Proyecto 4 -->
-<article class="proyecto-card">
-  <div class="proyecto-thumb">
-    <img src="src/thumb-ghexport.svg" alt="Miniatura Grasshopper/Python Exportar Datos" loading="lazy">
-  </div>
-  <div class="proyecto-body">
+    <article class="proyecto-card">
+      <div class="proyecto-thumb">
+        <img src="src/thumb-ghscale.svg" alt="Miniatura Automatización Python/Ingeniería" loading="lazy">
+      </div>
+      <div class="proyecto-body">
+        <h3>P4: Automatización de Ingeniería y Cuantificación (Python)</h3>
+        <p>
+          Desarrollo proactivo de scripts en <strong>Python</strong> para automatizar la cuantificación de materiales,
+          listado y escalado de modelos 3D. <strong>Reducción del proceso de 1-2 días a 30 minutos</strong>, con
+          interfaz amigable para personal no técnico.
+        </p>
+        <div class="proyecto-actions">
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://drive.google.com/drive/folders/1ykLcfRgWhug-1ywR7NKEGmsE8AZGFhJ9?usp=drive_link">
+            <i class='bx bx-show'></i>&nbsp;Ver
+          </a>
+        </div>
+      </div>
+    </article>
 
-    <p>Herramientas en Python y Grasshopper para análisis visual y exportación de resultados.</p>
-    <div class="proyecto-actions">
-      <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1ykLcfRgWhug-1ywR7NKEGmsE8AZGFhJ9?usp=drive_link">
-        <i class='bx bx-show'></i>&nbsp;Ver
-      </a>
-    </div>
-  </div>
-</article>
-
-<!-- Proyecto 5 -->
-<article class="proyecto-card">
-  <div class="proyecto-thumb">
-    <img src="src/thumb-ghscale.svg" alt="Miniatura Grasshopper/Python Escalar 3D" loading="lazy">
-  </div>
-  <div class="proyecto-body">
-
-    <p>Ejemplo de uso de Python y Grasshopper para manipulación y escalado de modelos tridimensionales.</p>
-    <div class="proyecto-actions">
-      <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1Rlk6DrxbEcbgJal2UGT5pAQC1ye13K5S?usp=drive_link">
-        <i class='bx bx-show'></i>&nbsp;Ver
-      </a>
-    </div>
-  </div>
-</article>
-
-
-
-</main>
+  </main>
 
 
   <!-- Redes -->
-   <div class="compartir">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"
-          ><i class="bx bxl-linkedin"></i
-        ></a>
-        <a href="https://github.com/EzequielOrtizIT" target="_blank"
-          ><i class="bx bxl-github"></i
-        ></a>
-        <a
-          href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte."
-          target="_blank"
-          ><i class="bx bxl-whatsapp-square"></i
-        ></a>
-      </div>
+  <div class="compartir">
+    <div class="social">
+      <a href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/EzequielOrtizIT" target="_blank"><i class="bx bxl-github"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte."
+        target="_blank"><i class="bx bxl-whatsapp-square"></i></a>
     </div>
+  </div>
 
-    <footer>
-      <p>
-        © 2025 Ezequiel Ortiz •
-        <a href="legales.html">Aviso legal y Privacidad</a>
-      </p>
-    </footer>
+  <footer>
+    <p>
+      © 2025 Ezequiel Ortiz •
+      <a href="legales.html">Aviso legal y Privacidad</a>
+    </p>
+  </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -15,12 +15,12 @@ const sr = ScrollReveal({
 sr.reveal('.logo', { delay: 200, origin: 'left' });
 sr.reveal('.menu-btn', { delay: 520, origin: 'right' });
 sr.reveal('.texto-inicio span', { delay: 200, origin: 'top' });
-sr.reveal('.texto-inicio h1', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio h2', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio h3', { delay: 680, origin: 'left' });
-sr.reveal('.texto-inicio p', { delay: 750, origin: 'right' });
-sr.reveal('.main-btn', { delay: 860, origin: 'left' });
-sr.reveal('.compartir', { delay: 950, origin: 'bottom' });
+sr.reveal('.texto-inicio h1', { delay: 280, origin: 'left' });
+sr.reveal('.texto-inicio h2', { delay: 280, origin: 'left' });
+sr.reveal('.texto-inicio h3', { delay: 480, origin: 'left' });
+sr.reveal('.texto-inicio p', { delay: 550, origin: 'right' });
+sr.reveal('.main-btn', { delay: 660, origin: 'left' });
+sr.reveal('.compartir', { delay: 350, origin: 'bottom' });
 sr.reveal('.img-inicio', { delay: 850, origin: 'left' });
 sr.reveal('.img-xp', { delay: 850, origin: 'left' });
 sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });
@@ -29,6 +29,10 @@ sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
 sr.reveal('.proyectos-hero h1', { delay: 400, origin: 'left' });
 sr.reveal('.proyectos-hero p', { delay: 600, origin: 'right' });
 sr.reveal('.proyectos-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
+sr.reveal('.habilidades-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
+sr.reveal('span', { delay: 600, interval: 150 });
+sr.reveal('.proyectos-container .hitos-card', { delay: 200, origin: 'bottom', interval: 150 });
+
 
 
 
