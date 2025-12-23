@@ -9,7 +9,7 @@ menu.onclick = () => {
 
 const sr = ScrollReveal({
 	distance: '50px',
-	duration: 1000,
+	duration: 700,
 });
 
 sr.reveal('.logo', { delay: 200, origin: 'left' });
