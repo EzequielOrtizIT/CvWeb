@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEZ900R0RJ"></script>
     <script>
@@ -33,7 +32,7 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo"><span><img class="downl" src="/src/home.png" alt=""></span></a>
+        <a href="index.html" class="logo"><img class="downl" src="/src/home.png" alt=""></a>
         <ul class="navbar">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="timeline.html" class="active">Trayectoria</a></li>
@@ -80,7 +79,8 @@
                     (sistemas operativos y aplicaciones) para clientes particulares.
                     <br><br>
                     Esta experiencia, que incluye trabajo previo en <strong>reparación avanzada de
-                    celulares (reballing, soldadura de partes)</strong>, demuestra micro-precisión y atención al detalle en
+                        celulares (reballing, soldadura de partes)</strong>, demuestra micro-precisión y atención al
+                    detalle en
                     el diagnóstico a nivel de componentes. Asegura una capacidad de respuesta y autonomía bajo presión,
                     esencial para entornos L1/L2.
                 </p>
@@ -92,7 +92,8 @@
             <h4 class="hitos-card__title">Licenciatura informática (UNQ)</h4>
             <p class="hitos-card__desc">CONTENIDO ÚNICO</p>
             <div class="hitos-card__extra">
-                <p><strong>(En curso) </strong>Estudios universitarios para formalizar las habilidades de programación, redes y sistemas operativos que requiere la industria.</p>
+                <p><strong>(En curso) </strong>Estudios universitarios para formalizar las habilidades de programación,
+                    redes y sistemas operativos que requiere la industria.</p>
             </div>
         </article>
 
@@ -106,8 +107,6 @@
                     de la búsqueda de la optimización de flujos de trabajo.</p>
             </div>
         </article>
-
-
 
         <article class="hitos-card">
             <span class="hitos-card__date">Mar 2015: Optimización de Procesos</span>
@@ -156,39 +155,9 @@
         </article>
     </main>
 
-    <div class="compartir">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/EzequielOrtizIT" target="_blank"><i class='bx bxl-github'></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte."
-                target="_blank"><i class='bx bxl-whatsapp-square'></i></a>
-        </div>
-    </div>
+    <mi-social></mi-social>
 
-    <footer>
-        <p>© 2025 Ezequiel Ortiz • <a href="legales.html">Aviso legal y Privacidad</a></p>
-    </footer>
-
-
-    <script>
-        document.querySelectorAll('.event__content').forEach(card => {
-            card.addEventListener('click', () => {
-                const isExpanded = card.classList.contains('expanded');
-                document.querySelectorAll('.event__content.expanded').forEach(e => e.classList.remove('expanded'));
-                if (!isExpanded) card.classList.add('expanded');
-            });
-        });
-
-        document.querySelectorAll('.img-timeline').forEach(container => {
-            container.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const img = container.querySelector('img');
-                if (img && img.src) {
-                    window.open(img.src, '_blank');
-                }
-            });
-        });
-    </script>
+    <mi-footer></mi-footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>

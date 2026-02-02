@@ -1,146 +1,66 @@
-let menu = document.querySelector('#menu-icon')
-let navbar = document.querySelector('.navbar')
+// --- MANEJO DEL MENÚ MOBILE ---
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
-	menu.classList.toggle('bx-x');
-	navbar.classList.toggle('open');
+    menu.classList.toggle('bx-x');
+    navbar.classList.toggle('open');
 };
 
-
+// --- ANIMACIONES CON SCROLLREVEAL ---
 const sr = ScrollReveal({
-	distance: '50px',
-	duration: 700,
+    distance: '50px',
+    duration: 700,
 });
 
-sr.reveal('.logo', { delay: 200, origin: 'left' });
+
 sr.reveal('.menu-btn', { delay: 520, origin: 'right' });
 sr.reveal('.texto-inicio span', { delay: 200, origin: 'top' });
-sr.reveal('.texto-inicio h1', { delay: 280, origin: 'left' });
-sr.reveal('.texto-inicio h2', { delay: 280, origin: 'left' });
+sr.reveal('.texto-inicio h1, .texto-inicio h2', { delay: 280, origin: 'left' });
 sr.reveal('.texto-inicio h3', { delay: 480, origin: 'left' });
 sr.reveal('.texto-inicio p', { delay: 550, origin: 'right' });
 sr.reveal('.main-btn', { delay: 660, origin: 'left' });
-sr.reveal('.compartir', { delay: 350, origin: 'bottom' });
-sr.reveal('.img-inicio', { delay: 850, origin: 'left' });
-sr.reveal('.img-xp', { delay: 850, origin: 'left' });
-sr.reveal('.img-xp-soft', { delay: 1050, origin: 'left' });
-sr.reveal('.img-contacto', { delay: 1050, origin: 'left' });
+sr.reveal('.img-inicio, .img-xp', { delay: 850, origin: 'left' });
+sr.reveal('.img-xp-soft, .img-contacto', { delay: 1050, origin: 'left' });
 sr.reveal('.contenedor', { delay: 1050, origin: 'bottom' });
 sr.reveal('.proyectos-hero h1', { delay: 400, origin: 'left' });
 sr.reveal('.proyectos-hero p', { delay: 600, origin: 'right' });
-sr.reveal('.proyectos-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
-sr.reveal('.habilidades-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
+sr.reveal('.proyectos-container .proyecto-card, .habilidades-container .proyecto-card', { delay: 200, origin: 'bottom', interval: 150 });
 sr.reveal('span', { delay: 600, interval: 150 });
 sr.reveal('.proyectos-container .hitos-card', { delay: 200, origin: 'bottom', interval: 150 });
 
 
-
-
-if (document.querySelector('#container-slider')) {
-	setInterval('funcionEjecutar("siguiente")', 5000);
+// --- WEB COMPONENT: FOOTER ---
+class MiFooter extends HTMLElement {
+    connectedCallback() {
+        const year = new Date().getFullYear();
+        this.innerHTML = `
+            <footer>
+                <p>© ${year} Ezequiel Ortiz • <a href="legales.html">Aviso legal y Privacidad</a></p>
+            </footer>
+        `;
+    }
 }
-//------------------------------ LIST SLIDER -------------------------
-if (document.querySelector('.listslider')) {
-	let link = document.querySelectorAll(".listslider li a");
-	link.forEach(function (link) {
-		link.addEventListener('click', function (e) {
-			e.anteriorentDefault();
-			let item = this.getAttribute('itlist');
-			let arrItem = item.split("_");
-			funcionEjecutar(arrItem[1]);
-			return false;
-		});
-	});
+customElements.define('mi-footer', MiFooter);
+
+
+// --- WEB COMPONENT: REDES SOCIALES ---
+class MiSocial extends HTMLElement {
+    connectedCallback() {
+
+        this.innerHTML = `
+            <div class="compartir">
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/ezequiel-l-ortiz/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/EzequielOrtizIT" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=+5491130091589&text=Hola,%20estoy%20interesado%20en%20contactarte."
+                        target="_blank"><i class='bx bxl-whatsapp-square'></i></a>
+                </div>
+            </div>
+        `;
+
+        const socialDiv = this.querySelector('.compartir');
+        sr.reveal(socialDiv, { delay: 350, origin: 'bottom' });
+    }
 }
-
-function funcionEjecutar(side) {
-	let parentTarget = document.getElementById('slider');
-	let elements = parentTarget.getElementsByTagName('li');
-	let curElement, siguienteElement;
-
-	for (var i = 0; i < elements.length; i++) {
-
-		if (elements[i].style.opacity == 1) {
-			curElement = i;
-			break;
-		}
-	}
-	if (side == 'anterior' || side == 'siguiente') {
-
-		if (side == "anterior") {
-			siguienteElement = (curElement == 0) ? elements.length - 1 : curElement - 1;
-		} else {
-			siguienteElement = (curElement == elements.length - 1) ? 0 : curElement + 1;
-		}
-	} else {
-		siguienteElement = side;
-		side = (curElement > siguienteElement) ? 'anterior' : 'siguiente';
-
-	}
-
-	//PUNTOS INFERIORES
-	let elementSel = document.getElementsByClassName("listslider")[0].getElementsByTagName("a");
-	elementSel[curElement].classList.remove("item-select-slid");
-	elementSel[siguienteElement].classList.add("item-select-slid");
-	elements[curElement].style.opacity = 0;
-	elements[curElement].style.zIndex = 0;
-	elements[siguienteElement].style.opacity = 1;
-	elements[siguienteElement].style.zIndex = 1;
-}
-
-
-
-var actual = 0;
-function puntos(n) {
-	var ptn = document.getElementsByClassName("punto");
-	for (i = 0; i < ptn.length; i++) {
-		if (ptn[i].className.includes("activo")) {
-			ptn[i].className = ptn[i].className.replace("activo", "");
-			break;
-		}
-	}
-	ptn[n].className += " activo";
-}
-
-function mostrar(n) {
-	var imagenes = document.getElementsByClassName("imagen");
-	for (i = 0; i < imagenes.length; i++) {
-		if (imagenes[i].className.includes("actual")) {
-			imagenes[i].className = imagenes[i].className.replace("actual", "");
-			break;
-		}
-	}
-	actual = n;
-	imagenes[n].className += " actual";
-	puntos(n);
-}
-
-function siguiente() {
-	actual++;
-	if (actual > 10) {
-		actual = 0;
-	}
-	mostrar(actual);
-}
-function anterior() {
-	actual--;
-	if (actual < 0) {
-		actual = 10;
-	}
-	mostrar(actual);
-}
-
-var velocidad = 2500;
-var play = setInterval("siguiente()", velocidad);
-
-function playpause() {
-	var boton = document.getElementById("btn");
-	if (play == null) {
-		boton.src = "src/pause-circle-regular-24.png";
-		play = setInterval("siguiente()", velocidad);
-	} else {
-		clearInterval(play);
-		play = null;
-		boton.src = "src/play-circle-regular-24.png";
-	}
-}
+customElements.define('mi-social', MiSocial);
