@@ -19,10 +19,10 @@ a {
     --bg-color: #1f1f21;
     --text-color: #fff;
     --main-color: rgb(53, 107, 142);
-    --big-font: 3.5rem;
-    --med-font: 1.75rem;
-    --lit-font: 1.5rem;
-    --p-font: 1.1rem;
+    --big-font: 3.8rem;
+    --med-font: 1.8rem;
+    --lit-font: 1.6rem;
+    --p-font: 1.25rem;
 }
 
 body {
@@ -131,6 +131,20 @@ section { padding: 0 10%; }
 
 .texto-inicio h1 { font-size: var(--big-font); margin: 20px 0; line-height: 1.1; }
 .texto-inicio h2 { font-size: var(--med-font); margin-bottom: 20px; color: var(--main-color); }
+.texto-inicio h3 {
+    font-size: var(--lit-font);
+    font-weight: 600;
+    margin-top: 30px;    
+    margin-bottom: 10px; 
+    color: var(--text-color);
+}
+.texto-inicio h4 {
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin-top: 15px;    
+    margin-bottom: 6px; 
+    color: var(--text-color);
+}
 .texto-inicio p {
     font-size: var(--p-font);
     color: #c3c3c3;
@@ -203,13 +217,14 @@ section { padding: 0 10%; }
 
 /* Card Genérica (Proyectos y Habilidades) */
 .proyecto-card, .hitos-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* CLAVE: Ocupa el 100% del alto de la celda */
     background: #232326;
     border: 1px solid #2f2f33;
     border-radius: 12px;
     overflow: hidden;
     transition: 0.3s;
-    display: flex;
-    flex-direction: column;
 }
 
 .proyecto-card:hover, .hitos-card:hover {
@@ -225,21 +240,29 @@ section { padding: 0 10%; }
     border-bottom: 1px solid #2f2f33;
 }
 
-.proyecto-body, .hitos-card { padding: 20px; } /* hitos-card tiene padding directo */
+.proyecto-body, .hitos-card { 
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* CLAVE: Esto llena el hueco si hay poco texto */
+} 
 
 .proyecto-body h3, .hitos-card__title {
     color: var(--text-color);
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-.proyecto-body h3 { color: var(--main-color); } /* Diferencia visual */
+.proyecto-body h3 { color: var(--main-color); } 
 
 .proyecto-body ul { padding-left: 20px; margin-bottom: 15px; }
 .proyecto-body li { list-style: disc; color: #ccc; margin-bottom: 5px; }
 
 .proyecto-actions {
-    margin-top: auto; /* Empuja el botón al fondo */
-    padding-top: 15px;
+    margin-top: auto; 
+    padding-top: 20px;
+    display: flex;
+    justify-content: center; 
+    width: 100%;
 }
 
 /* Estilos específicos de Timeline (hitos-card) */
@@ -256,8 +279,6 @@ section { padding: 0 10%; }
     padding-top: 15px;
     font-size: 0.95rem;
     color: #ccc;
-    /* Nota: Si querés que se expanda/colapse con JS, necesitás clases extra aquí. 
-       Por ahora lo dejo visible o estándar según tu HTML actual */
 }
 
 /* =========================================
